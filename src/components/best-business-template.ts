@@ -49,28 +49,34 @@ export class BestBusinessTemplate extends LitElement {
   render() {
     return html`
       <div id="wrapper" class="flex flex-col">
-        <header id="banner" class="flex flex-row py-5 px-3 items-center">
-          <img class="logo" alt="mermaid" src=${logo} />
-          <h1 class="hidden">
-            La Sirena Recomienda | Las mejores recomendaciones de Benidorm
-          </h1>
-          <span class="text-2xl font-medium">SIRENA RECOMIENDA</span>
+        <header id="banner" class="py-5 px-3 w-full">
+          <div class="flex flex-row w-9/12 mx-auto">
+            <img class="logo" alt="mermaid" src=${logo} />
+            <h1 class="hidden">
+              La Sirena Recomienda | Las mejores recomendaciones de Benidorm
+            </h1>
+            <span class="text-2xl font-medium">SIRENA RECOMIENDA</span>
+          </div>
         </header>
-        <nav class="flex flex-row overflow-auto text-sm text-nowrap py-2 px-2">
-          <a href="#" class="block p-2">QUÉ HACER</a>
-          <a href="#" class="block p-2">DÓNDE COMER</a>
-          <a href="#" class="block p-2">CULTURA</a>
-          <a href="#" class="block p-2">BELLEZA</a>
-          <a href="#" class="block p-2">DÓNDE APARCAR</a>
-          <a href="#" class="block p-2">PARA NIÑOS</a>
-          <a href="#" class="block p-2">EVENTOS</a>
-          <a href="#" class="block p-2">DEPORTES</a>
-          <a href="#" class="block p-2">VIDA NOCTURNA</a>
+        <nav class="flex flex-row overflow-auto text-sm text-nowrap">
+          <div class="flex flex-row my-1 mx-auto max-w-6xl">
+            <a href="#" class="block p-2 font-medium">QUÉ HACER</a>
+            <a href="#" class="block p-2 font-medium">DÓNDE COMER</a>
+            <a href="#" class="block p-2 font-medium">CULTURA</a>
+            <a href="#" class="block p-2 font-medium">BELLEZA</a>
+            <a href="#" class="block p-2 font-medium">DÓNDE APARCAR</a>
+            <a href="#" class="block p-2 font-medium">PARA NIÑOS</a>
+            <a href="#" class="block p-2 font-medium">EVENTOS</a>
+            <a href="#" class="block p-2 font-medium">DEPORTES</a>
+            <a href="#" class="block p-2 font-medium">VIDA NOCTURNA</a>
+          </div>
         </nav>
-        <main class="flex flex-col flex-1">
-          <section class="flex flex-col items-center p-5">
-            <article>
-              <img src="https://picsum.photos/400/250" />
+        <main class="flex flex-col flex-1 mx-auto max-w-6xl">
+          <section
+            class="flex lg:flex-row flex-col gap-6 items-center place-content-between p-5"
+          >
+            <article class="lg:w-8/12 w-full">
+              <img src="https://picsum.photos/730/427" class="h-auto w-full" />
               <div class="main-article-desc p-3">
                 <!-- TO-DO: Dynamic tags -->
                 <span class="tags">Cultura, Qué Hacer</span>
@@ -83,10 +89,16 @@ export class BestBusinessTemplate extends LitElement {
                 </p>
               </div>
             </article>
-            <article class="flex flex-col justify-between w-full mt-5">
+            <article class="flex flex-col gap-8 lg:w-4/12 w-full lg:mt-0 mt-5">
+              <h2 class="text-2xl font-medium lg:block hidden">
+                NO TE LO PIERDAS
+              </h2>
               <div class="flex flex-row">
-                <img src="https://picsum.photos/500/400" class="max-h-24" />
-                <div class="p-3">
+                <img
+                  src="https://picsum.photos/290/220"
+                  class="h-4/6 lg:w-4/12 w-3/12"
+                />
+                <div class="px-3">
                   <span class="tags">Dónde Comer</span>
                   <h3 class="text-lg font-medium my-1">
                     Mejores lorem ipsum en Benidorm
@@ -94,8 +106,35 @@ export class BestBusinessTemplate extends LitElement {
                 </div>
               </div>
               <div class="flex flex-row">
-                <img src="https://picsum.photos/250/200" class="max-h-24" />
-                <div class="p-3">
+                <img
+                  src="https://picsum.photos/290/220"
+                  class="h-4/6 lg:w-4/12 w-3/12"
+                />
+                <div class="px-3">
+                  <span class="tags">Dónde Comer</span>
+                  <h3 class="text-lg font-medium my-1">
+                    Mejores lorem ipsum en Benidorm
+                  </h3>
+                </div>
+              </div>
+              <div class="flex flex-row">
+                <img
+                  src="https://picsum.photos/290/220"
+                  class="h-4/6 lg:w-4/12 w-3/12"
+                />
+                <div class="px-3">
+                  <span class="tags">Dónde Comer</span>
+                  <h3 class="text-lg font-medium my-1">
+                    Mejores lorem ipsum en Benidorm
+                  </h3>
+                </div>
+              </div>
+              <div class="flex flex-row">
+                <img
+                  src="https://picsum.photos/290/220"
+                  class="h-4/6 lg:w-4/12 w-3/12"
+                />
+                <div class="px-3">
                   <span class="tags">Dónde Comer</span>
                   <h3 class="text-lg font-medium my-1">
                     Mejores lorem ipsum en Benidorm
