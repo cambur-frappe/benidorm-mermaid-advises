@@ -1,26 +1,38 @@
 import { LitElement, html, css } from "lit";
 import { property, customElement } from "lit/decorators.js";
 import { TWStyles } from "../styles/tw.js";
+import './ui/MerHeader.js';
 
-const logo = new URL("../assets/mermaid.png", import.meta.url).href;
-
-@customElement("best-business-template")
-export class BestBusinessTemplate extends LitElement {
-  @property({ type: String }) title = "Mejores lorem ipsum en Benidorm";
+@customElement("mer-home")
+export class MerHome extends LitElement {
+  @property({ type: String }) title = "La Sirena Recomienda | Las mejores recomendaciones de Benidorm";
 
   static styles = [
     css`
       #wrapper {
         font-family: "Montserrat", "Verdana", sans-serif;
       }
-      #banner {
-        border-top: 4px solid #fb5ea7;
-        border-bottom: 1px solid #000000;
+
+      #navigation::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 1.25rem;
+        width: 1.25rem;
+        background: #ffffff
       }
 
-      .logo {
-        height: 2rem;
-        margin-right: 0.5rem;
+      #navigation::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 1.25rem;
+        width: 1.25rem;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          #ffffff 75%
+        );
       }
 
       nav {
@@ -49,33 +61,25 @@ export class BestBusinessTemplate extends LitElement {
   render() {
     return html`
       <div id="wrapper" class="flex flex-col">
-        <header id="banner" class="py-5 px-3 w-full">
-          <div class="flex flex-row w-9/12 mx-auto">
-            <img class="logo" alt="mermaid" src=${logo} />
-            <h1 class="hidden">
-              La Sirena Recomienda | Las mejores recomendaciones de Benidorm
-            </h1>
-            <span class="text-2xl font-medium">SIRENA RECOMIENDA</span>
-          </div>
-        </header>
+        <mer-header></mer-header>
         <nav class="flex flex-row overflow-auto text-sm text-nowrap">
-          <div class="flex flex-row my-1 mx-auto max-w-6xl">
-            <a href="#" class="block p-2 font-medium">QUÉ HACER</a>
-            <a href="#" class="block p-2 font-medium">DÓNDE COMER</a>
-            <a href="#" class="block p-2 font-medium">CULTURA</a>
-            <a href="#" class="block p-2 font-medium">BELLEZA</a>
-            <a href="#" class="block p-2 font-medium">DÓNDE APARCAR</a>
-            <a href="#" class="block p-2 font-medium">PARA NIÑOS</a>
-            <a href="#" class="block p-2 font-medium">EVENTOS</a>
-            <a href="#" class="block p-2 font-medium">DEPORTES</a>
-            <a href="#" class="block p-2 font-medium">VIDA NOCTURNA</a>
+          <div id="navigation" class="flex flex-row gap-4 my-3 xl:px-0 px-5 mx-auto w-full max-w-6xl justify-start">
+            <a href="#" class="block font-medium">QUÉ HACER</a>
+            <a href="../templates/gastro.html" class="block font-medium">DÓNDE COMER</a>
+            <a href="#" class="block font-medium">CULTURA</a>
+            <a href="#" class="block font-medium">BELLEZA</a>
+            <a href="#" class="block font-medium">DÓNDE APARCAR</a>
+            <a href="#" class="block font-medium">PARA NIÑOS</a>
+            <a href="#" class="block font-medium">EVENTOS</a>
+            <a href="#" class="block font-medium">DEPORTES</a>
+            <a href="#" class="block pr-5 font-medium">VIDA NOCTURNA</a>
           </div>
         </nav>
-        <main class="flex flex-col flex-1 mx-auto max-w-6xl">
+        <main class="flex flex-col flex-1 mx-auto w-full max-w-6xl">
           <section
-            class="flex lg:flex-row flex-col gap-6 items-center place-content-between p-5"
+            class="flex xl:flex-row flex-col gap-6 items-center place-content-between xl:px-0 p-5"
           >
-            <article class="lg:w-8/12 w-full">
+            <article class="xl:w-8/12 w-full">
               <img src="https://picsum.photos/730/427" class="h-auto w-full" />
               <div class="main-article-desc p-3">
                 <!-- TO-DO: Dynamic tags -->
@@ -89,7 +93,7 @@ export class BestBusinessTemplate extends LitElement {
                 </p>
               </div>
             </article>
-            <article class="flex flex-col gap-8 lg:w-4/12 w-full lg:mt-0 mt-5">
+            <article class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
               <h2 class="text-2xl font-medium lg:block hidden">
                 NO TE LO PIERDAS
               </h2>
