@@ -94,7 +94,7 @@ export class MerHome extends LitElement {
               </div>
             </article>
             <article class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
-              <h2 class="text-2xl font-medium lg:block hidden">
+              <h2 class="text-2xl font-medium xl:block hidden">
                 NO TE LO PIERDAS
               </h2>
               <div class="flex flex-row">

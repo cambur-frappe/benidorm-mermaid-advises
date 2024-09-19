@@ -1028,16 +1028,16 @@ video {
     margin-top: 0px;
   }
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:w-4\/12 {
     width: 33.333333%;
   }
 }
 
 @media (min-width: 1280px) {
+  .xl\:block {
+    display: block;
+  }
+
   .xl\:w-4\/12 {
     width: 33.333333%;
   }
