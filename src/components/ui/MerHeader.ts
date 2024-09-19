@@ -17,7 +17,7 @@ export class MerHeader extends LitElement {
   ];
 
   @property({ type: String })
-  title = "Texto de prueba";
+  title = "La Sirena Recomienda | Las mejores recomendaciones de Benidorm";
 
   render() {
     return html`
