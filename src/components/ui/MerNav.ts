@@ -65,7 +65,7 @@ export class MerNav extends LitElement {
             links.map(
               (link) =>
                 html`
-                  <a href=${link.url} class="block pr-6 font-medium">
+                  <a href=${link.url} class="block pr-6 font-medium hover:text-pink-400">
                     ${link.name}
                   </a>
                 `

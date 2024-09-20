@@ -9,7 +9,7 @@
     "tw": "concurrently \"tailwindcss -i ./src/styles/tailwindlib.css -o ./src/styles/tw.css\" \"twlit --input ./src/styles/tw.css --output ./src/styles/tw.ts\"",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
+    "preview": "vite preview",
     "analyze": "cem analyze --litelement"
   },
   "dependencies": {
