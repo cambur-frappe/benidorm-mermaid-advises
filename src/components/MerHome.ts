@@ -1,8 +1,9 @@
 import { LitElement, html, css } from "lit";
 import { property, customElement } from "lit/decorators.js";
 import { TWStyles } from "../styles/tw.js";
-import './ui/MerHeader.js';
-import './ui/MerNav.js';
+import "./ui/MerHeader.js";
+import "./ui/MerNav.js";
+import "./ui/MerBigArticle.js";
 
 @customElement("mer-home")
 export class MerHome extends LitElement {
@@ -10,11 +11,6 @@ export class MerHome extends LitElement {
     css`
       #wrapper {
         font-family: "Montserrat", "Verdana", sans-serif;
-      }
-
-      .main-article-desc {
-        border: 1px solid #838383;
-        border-top: 0;
       }
 
       .tags {
@@ -34,21 +30,12 @@ export class MerHome extends LitElement {
           <section
             class="flex xl:flex-row flex-col gap-6 items-center place-content-between xl:px-0 p-5"
           >
-            <article class="xl:w-8/12 w-full">
-              <img src="https://picsum.photos/730/427" class="h-auto w-full" />
-              <div class="main-article-desc p-3">
-                <!-- TO-DO: Dynamic tags -->
-                <span class="tags">Cultura, Qué Hacer</span>
-                <h2 class="text-2xl font-medium my-2 leading-relaxed">
-                  Mejores lorem ipsum en Benidorm
-                </h2>
-                <p class="text-sm text-left text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam euismod, arcu nec vehicula...
-                </p>
-              </div>
-            </article>
-            <article class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
+            <mer-big-article
+              title="Mejores lorem ipsum en Benidorm"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, arcu nec vehicula..."
+              tags="Cultura, Qué Hacer"
+            ></mer-big-article>
+            <aside class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
               <h2 class="text-2xl font-medium xl:block hidden">
                 NO TE LO PIERDAS
               </h2>
@@ -100,7 +87,7 @@ export class MerHome extends LitElement {
                   </h3>
                 </div>
               </div>
-            </article>
+            </aside>
           </section>
         </main>
         <footer class="flex flex-row justify-center text-xs py-2">

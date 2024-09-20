@@ -1025,6 +1025,11 @@ video {
   color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1050,10 +1055,6 @@ video {
 
   .xl\\:w-4\\/12 {
     width: 33.333333%;
-  }
-
-  .xl\\:w-8\\/12 {
-    width: 66.666667%;
   }
 
   .xl\\:flex-row {
