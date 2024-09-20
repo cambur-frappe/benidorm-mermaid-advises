@@ -17,8 +17,8 @@ export class MerBigArticle extends LitElement {
 
   render() {
     return html`
-      <article class="w-full">
-        <img src="https://picsum.photos/730/427" class="h-auto w-full" />
+      <article class="h-auto w-full">
+        <img src="https://picsum.photos/1920/1080" class="h-auto xl:max-w-5xl w-full" />
         <div class="main-article-desc p-3">
           <!-- TO-DO: Dynamic tags -->
           <span class="text-slate-400 text-xs">${this.tags}</span>

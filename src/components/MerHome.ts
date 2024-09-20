@@ -4,6 +4,26 @@ import { TWStyles } from "../styles/tw.js";
 import "./ui/MerHeader.js";
 import "./ui/MerNav.js";
 import "./ui/MerBigArticle.js";
+import "./ui/MerSmallArticle.js";
+
+const relatedArticles = [
+  {
+    title: "Primer artículo relacionado",
+    tags: "Cultura, Qué Hacer",
+  },
+  {
+    title: "Segundo artículo relacionado",
+    tags: "Qué Comer, Cultura",
+  },
+  {
+    title: "Tercer artículo relacionado",
+    tags: "Dónde Aparcar",
+  },
+  {
+    title: "Cuarto artículo relacionado",
+    tags: "Eventos, Deportes",
+  }
+];
 
 @customElement("mer-home")
 export class MerHome extends LitElement {
@@ -27,68 +47,32 @@ export class MerHome extends LitElement {
         <mer-header></mer-header>
         <mer-nav></mer-nav>
         <main class="flex flex-col flex-1 mx-auto w-full max-w-6xl">
-          <section
-            class="flex xl:flex-row flex-col gap-6 items-center place-content-between xl:px-0 p-5"
+          <div
+            class="flex xl:flex-row flex-col gap-6 items-center xl:px-0 p-5"
           >
-            <mer-big-article
-              title="Mejores lorem ipsum en Benidorm"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, arcu nec vehicula..."
-              tags="Cultura, Qué Hacer"
-            ></mer-big-article>
-            <aside class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
+            <section>
+              <mer-big-article
+                title="Mejores lorem ipsum en Benidorm"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, arcu nec vehicula..."
+                tags="Cultura, Qué Hacer"
+              ></mer-big-article>
+            </section>
+            <section class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
               <h2 class="text-2xl font-medium xl:block hidden">
                 NO TE LO PIERDAS
               </h2>
-              <div class="flex flex-row">
-                <img
-                  src="https://picsum.photos/290/220"
-                  class="h-4/6 lg:w-4/12 w-3/12"
-                />
-                <div class="px-3">
-                  <span class="tags">Dónde Comer</span>
-                  <h3 class="text-lg font-medium my-1">
-                    Mejores lorem ipsum en Benidorm
-                  </h3>
-                </div>
-              </div>
-              <div class="flex flex-row">
-                <img
-                  src="https://picsum.photos/290/220"
-                  class="h-4/6 lg:w-4/12 w-3/12"
-                />
-                <div class="px-3">
-                  <span class="tags">Dónde Comer</span>
-                  <h3 class="text-lg font-medium my-1">
-                    Mejores lorem ipsum en Benidorm
-                  </h3>
-                </div>
-              </div>
-              <div class="flex flex-row">
-                <img
-                  src="https://picsum.photos/290/220"
-                  class="h-4/6 lg:w-4/12 w-3/12"
-                />
-                <div class="px-3">
-                  <span class="tags">Dónde Comer</span>
-                  <h3 class="text-lg font-medium my-1">
-                    Mejores lorem ipsum en Benidorm
-                  </h3>
-                </div>
-              </div>
-              <div class="flex flex-row">
-                <img
-                  src="https://picsum.photos/290/220"
-                  class="h-4/6 lg:w-4/12 w-3/12"
-                />
-                <div class="px-3">
-                  <span class="tags">Dónde Comer</span>
-                  <h3 class="text-lg font-medium my-1">
-                    Mejores lorem ipsum en Benidorm
-                  </h3>
-                </div>
-              </div>
-            </aside>
-          </section>
+              ${relatedArticles.map(
+                (article) => html`
+                  <mer-small-article
+                    title=${article.title}
+                    tags=${article.tags}
+                    imgSrc="https://picsum.photos/290/220"
+                  ></mer-small-article>
+                `
+              )
+              }
+            </section>
+          </div>
         </main>
         <footer class="flex flex-row justify-center text-xs py-2">
           <p>Made with love by</p>

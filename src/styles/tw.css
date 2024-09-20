@@ -666,6 +666,10 @@ video {
   height: auto;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .max-h-24 {
   max-height: 6rem;
 }
@@ -812,6 +816,10 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .gap-4 {
@@ -1013,6 +1021,11 @@ video {
   line-height: 1.625;
 }
 
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -1053,6 +1066,10 @@ video {
 
   .xl\:w-4\/12 {
     width: 33.333333%;
+  }
+
+  .xl\:max-w-5xl {
+    max-width: 64rem;
   }
 
   .xl\:flex-row {
