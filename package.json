@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "tw": "concurrently \"tailwindcss -i ./src/styles/tailwindlib.css -o ./src/styles/tw.css\" \"twlit --input ./src/styles/tw.css --output ./src/styles/tw.ts\"",
+    "tw": "concurrently \"tailwindcss -i ./public/styles/tailwindlib.css -o ./public/styles/tw.css\" \"twlit --input ./public/styles/tw.css --output ./public/styles/tw.ts\"",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",

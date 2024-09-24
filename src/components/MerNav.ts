@@ -1,18 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { TWStyles } from "../../public/styles/tw.js";
 import { customElement } from "lit/decorators.js";
-
-const links = [
-  { name: "QUÉ HACER", url: "/" },
-  { name: "DÓNDE COMER", url: "/where-best-rice" },
-  { name: "CULTURA", url: "#" },
-  { name: "BELLEZA", url: "#" },
-  { name: "DÓNDE APARCAR", url: "#" },
-  { name: "PARA NIÑOS", url: "#" },
-  { name: "EVENTOS", url: "#" },
-  { name: "DEPORTES", url: "#" },
-  { name: "VIDA NOCTURNA", url: "#" },
-];
+import { navBarLinks } from "../constants.js";
 
 @customElement("mer-nav")
 export class MerNav extends LitElement {
@@ -62,7 +51,7 @@ export class MerNav extends LitElement {
         >
           ${
             // Iterate over the links array and create an anchor element for each link
-            links.map(
+            navBarLinks.map(
               (link) => html`
                 <a
                   href=${link.url}

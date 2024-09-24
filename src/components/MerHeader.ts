@@ -25,7 +25,7 @@ export class MerHeader extends LitElement {
         <div class="flex flex-row w-full max-w-6xl mx-auto">
           <img class="h-8 mr-2" alt="mermaid" src=${this.imgSrc} />
           <h1 class="hidden">${this.title}</h1>
-          <span class="text-2xl font-medium">SIRENA RECOMIENDA</span>
+          <span class="text-2xl font-medium">LA SIRENA RECOMIENDA</span>
         </div>
       </header>
     `;

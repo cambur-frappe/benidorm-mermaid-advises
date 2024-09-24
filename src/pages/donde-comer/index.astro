@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const dondeComerPages = [
+  {
+    title: "Dónde comer el mejor arroz en Benidorm",
+    url: "./donde-comer/mejor-arroz",
+  },
+];
+---
+
+<Layout>
+  <!-- Render anchors linking to the other pages inside donde-comer folder with JavaScript -->
+  {
+    dondeComerPages.map((page) => {
+      return <a class="hover:text-pink-400" href={page.url}>{page.title}</a>;
+    })
+  }
+</Layout>
