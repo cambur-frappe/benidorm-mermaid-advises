@@ -1,0 +1,33 @@
+---
+import { MerHeader } from '../components/MerHeader';
+import { MerNav } from '../components/MerNav';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="icon" href="/mermaid.png" />
+		<link rel="stylesheet" href="/styles/tw.css" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="flex flex-col">
+			<MerHeader />
+			<MerNav />
+			<slot />
+		</div>
+	</body>
+</html>
+<style is:global>
+	html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+</style>
