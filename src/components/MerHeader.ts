@@ -1,12 +1,13 @@
 import { LitElement, html, css } from "lit";
-import { TWStyles } from "../../styles/tw.js";
+import { TWStyles } from "../../public/styles/tw.js";
 import { customElement, property } from "lit/decorators.js";
-import imgUrl from "../../assets/mermaid.png";
+import imgUrl from "/public/mermaid.png";
 
 @customElement("mer-header")
 export class MerHeader extends LitElement {
-  @property({ type: String }) title = "La Sirena Recomienda | Las mejores recomendaciones de Benidorm";
-  @property({ type: String }) imgSrc = imgUrl;
+  @property({ type: String }) title =
+    "La Sirena Recomienda | Las mejores recomendaciones de Benidorm";
+  @property({ type: String }) imgSrc = imgUrl.src;
 
   static styles = [
     css`

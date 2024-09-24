@@ -1,10 +1,10 @@
 import { LitElement, html, css } from "lit";
-import { TWStyles } from "../../styles/tw.js";
-import { customElement, property } from "lit/decorators.js";
+import { TWStyles } from "../../public/styles/tw.js";
+import { customElement } from "lit/decorators.js";
 
 const links = [
-  { name: "QUÉ HACER", url: "#" },
-  { name: "DÓNDE COMER", url: "../templates/gastro.html" },
+  { name: "QUÉ HACER", url: "/" },
+  { name: "DÓNDE COMER", url: "/where-best-rice" },
   { name: "CULTURA", url: "#" },
   { name: "BELLEZA", url: "#" },
   { name: "DÓNDE APARCAR", url: "#" },
@@ -24,7 +24,7 @@ export class MerNav extends LitElement {
         left: 0;
         height: 1.25rem;
         width: 1.25rem;
-        background: #ffffff
+        background: #ffffff;
       }
 
       #navigation::after {
@@ -63,12 +63,14 @@ export class MerNav extends LitElement {
           ${
             // Iterate over the links array and create an anchor element for each link
             links.map(
-              (link) =>
-                html`
-                  <a href=${link.url} class="block pr-6 font-medium hover:text-pink-400">
-                    ${link.name}
-                  </a>
-                `
+              (link) => html`
+                <a
+                  href=${link.url}
+                  class="block pr-6 font-medium hover:text-pink-400"
+                >
+                  ${link.name}
+                </a>
+              `
             )
           }
         </div>
