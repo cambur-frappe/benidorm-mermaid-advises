@@ -1,77 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import '../components/MerBigArticle'
-import '../components/MerSmallArticle'
-import type { ArticleProps } from '../types/ArticleProps'
-
-const relatedArticles:ArticleProps[] = [
-  {
-    title: "Primer artículo relacionado",
-    tags: "Cultura, Qué Hacer",
-	imgSrc: "https://picsum.photos/290/220",
-  },
-  {
-    title: "Segundo artículo relacionado",
-    tags: "Qué Comer, Cultura",
-	imgSrc: "https://picsum.photos/290/220",
-  },
-  {
-    title: "Tercer artículo relacionado",
-    tags: "Dónde Aparcar",
-	imgSrc: "https://picsum.photos/290/220",
-  },
-  {
-    title: "Cuarto artículo relacionado",
-    tags: "Eventos, Deportes",
-	imgSrc: "https://picsum.photos/290/220",
-  }
-];
-
+import Layout from "../layouts/Layout.astro";
+import "../components/MerBigArticle";
+import "../components/MerRelatedPosts";
 ---
+
 <Layout title="La Sirena Recomienda | Las mejores recomendaciones de Benidorm">
-	<main class="flex flex-col flex-1 mx-auto w-full max-w-6xl">
-		<div
-		  class="flex xl:flex-row flex-col gap-6 items-center xl:px-0 p-5"
-		>
-		  <section>
-			<mer-big-article
-			  title="Mejores lorem ipsum en Benidorm"
-			  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, arcu nec vehicula..."
-			  imgSrc="https://picsum.photos/1920/1080"
-			  tags="Cultura, Qué Hacer"
-			></mer-big-article>
-		  </section>
-		  <section class="flex flex-col gap-8 xl:w-4/12 w-full lg:mt-0 mt-5">
-			<h2 class="text-2xl font-medium xl:block hidden">
-			  NO TE LO PIERDAS
-			</h2>
-			{relatedArticles.map(
-			  (article:ArticleProps) => 
-				<mer-small-article
-				  title={article.title}
-				  tags={article.tags}
-				  imgSrc="https://picsum.photos/290/220"
-				></mer-small-article>
-			)
-			}
-		  </section>
-		</div>
-	  </main>
-	  <footer class="flex flex-row justify-center text-xs py-2">
-		<p>Made with love by</p>
-		<a
-		  class="text-pink-500 font-semibold ml-1"
-		  target="_blank"
-		  rel="noopener noreferrer"
-		  href="https://github.com/cambur-frappe"
-		  >Frappé 🍧</a
-		>
-	  </footer>
+  <div class="flex xl:flex-row flex-col gap-6 items-center xl:px-0 p-5">
+    <section>
+      <mer-big-article
+        title="Mejores lorem ipsum en Benidorm"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, arcu nec vehicula..."
+        imgSrc="https://picsum.photos/1920/1080"
+        tags="Cultura, Qué Hacer"></mer-big-article>
+    </section>
+	<mer-related-posts></mer-related-posts>
+  </div>
 </Layout>
 
 <style>
-	html, body {
-		margin: 0;
-		padding: 0;
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
 </style>

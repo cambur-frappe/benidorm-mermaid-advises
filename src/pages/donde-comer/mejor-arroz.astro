@@ -1,7 +1,155 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+import Layout from "../../layouts/Layout.astro";
+import "../../components/MerRelatedPosts.ts";
+import "../../components/MerBusinessCard.ts";
+import type { IBusiness } from "../../types/Business";
+
+const arroceriasArr: IBusiness[] = [
+    {
+      "internationalPhoneNumber": "+34 966 86 72 12",
+      "formattedAddress": "Partida, Foia Manera, Camí del Palasiet, 31, 03503 Benidorm, Alicante, Spain",
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=14017503808479303192",
+      "websiteUri": "https://arrocerialamarina.com/",
+      "userRatingCount": 1385,
+      "displayName": {
+        "text": "Restaurant Arrocería La Marina",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 628 24 21 99",
+      "formattedAddress": "plaza mayor, 27, 03501 Benidorm, Alicante, Spain",
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=7983178553964857479",
+      "websiteUri": "https://www.arroceriadelamejillonera.com/",
+      "userRatingCount": 1090,
+      "displayName": {
+        "text": "La Arrocería de La Mejillonera",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 965 85 34 96",
+      "formattedAddress": "Av. Dr. Severo Ochoa, 46, A, 03503 Benidorm, Alicante, Spain",
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=12899299097204062610",
+      "userRatingCount": 737,
+      "displayName": {
+        "text": "Arrocería El Niño",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 628 24 21 99",
+      "formattedAddress": "Pg. de la Carretera, 16, 03501 Benidorm, Alicante, Spain",
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=10911795079434920569",
+      "websiteUri": "https://www.lamejillonera.com/",
+      "userRatingCount": 7966,
+      "displayName": {
+        "text": "La Mejillonera",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 965 85 35 42",
+      "formattedAddress": "Av. de Madrid, 7, 03503 Benidorm, Alicante, Spain",
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=13799082932401916263",
+      "userRatingCount": 1102,
+      "displayName": {
+        "text": "Restaurante los Ranchos",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 965 85 30 10",
+      "formattedAddress": "Av. de Ruzafa, 2, 03501 Benidorm, Alicante, Spain",
+      "rating": 4,
+      "googleMapsUri": "https://maps.google.com/?cid=14419320622858411045",
+      "userRatingCount": 2147,
+      "displayName": {
+        "text": "Restaurante Aitona",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 667 77 24 57",
+      "formattedAddress": "Pg. de la Carretera, 29, 03501 Benidorm, Alicante, Spain",
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=14137018691204087478",
+      "websiteUri": "http://marisqueria-cordoba.eatbu.com/",
+      "userRatingCount": 5617,
+      "displayName": {
+        "text": "Restaurante Marisquería Córdoba",
+        "languageCode": "es"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 965 86 60 03",
+      "formattedAddress": "Av. de Uruguay, 6, 03502 Benidorm, Alicante, Spain",
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=8986964204966878530",
+      "userRatingCount": 855,
+      "displayName": {
+        "text": "El Pescaito",
+        "languageCode": "en"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 650 94 33 63",
+      "formattedAddress": "Av. de la Armada Española, 19, 03502 Benidorm, Alicante, Spain",
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=17496361277062407624",
+      "websiteUri": "http://www.ongietorribenidorm.com/",
+      "userRatingCount": 1390,
+      "displayName": {
+        "text": "Ongi Etorri • Restaurant Basc",
+        "languageCode": "ca"
+      }
+    },
+    {
+      "internationalPhoneNumber": "+34 965 86 32 71",
+      "formattedAddress": "Av. de Madrid, 19, 03503 Benidorm, Alicante, Spain",
+      "rating": 4,
+      "googleMapsUri": "https://maps.google.com/?cid=18325613895736857970",
+      "websiteUri": "https://www.restaurante-labahia.com/",
+      "userRatingCount": 2370,
+      "displayName": {
+        "text": "Restaurante La Bahía",
+        "languageCode": "en"
+      }
+    }
+  ]
 ---
 
 <Layout>
-    <h1>Dónde comer mejor arroz en benidorm</h1>
+  <h1 class="text-5xl font-semibold xl:px-0 p-5">
+    Los mejores arroces y paellas de Benidorm
+  </h1>
+  <div class="flex xl:flex-row flex-col gap-6 items-start xl:px-0 p-5">
+    <article class="h-auto w-full">
+      <img
+        src="/arroz-paella-marinera-senyoret.jpg"
+        alt="Paella marinera del senyoret"
+      />
+      <p class="p-3">
+        En Benidorm, la paella es un plato que no puede faltar en la carta de
+        ningún restaurante. Aunque la paella valenciana es la más conocida, en
+        Benidorm se pueden encontrar muchas variedades de este rico plato
+        autóctono. A continuación, te presentamos una selección de <strong
+          >los mejores restaurantes para comer paella en Benidorm</strong
+        >.
+      </p>
+    </article>
+    <mer-related-posts showRelatedOnSm="false"></mer-related-posts>
+  </div>
+  {
+    arroceriasArr.map((arroceria) => (
+      <mer-business-card
+        business={arroceria}
+      ></mer-business-card>
+    ))
+  }
 </Layout>
